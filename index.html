@@ -15,8 +15,16 @@
   <div id="root"></div>
   <script type="text/babel">
     (() => {
+
+      const name = 'taguchi';
+
+      // ReactDOM.render() で送れる要素は1つのみ!
       ReactDOM.render(
-        <p>Hello!</p>,
+        <div>
+          <p>Hello! {name.toUpperCase()}</p>
+          <hr/>
+          <p>Hello! {name.toUpperCase()}</p>
+        </div>,
         document.getElementById('root')
       )
     })();
