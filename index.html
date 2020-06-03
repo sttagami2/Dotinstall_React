@@ -45,7 +45,10 @@
               {id: 'A', count: 0, color: 'tomato'},
               {id: 'B', count: 0, color: 'skyblue'},
               {id: 'C', count: 0, color: 'limegreen'},
-            ]
+              {id: 'B', count: 0, color: 'gray'},
+              {id: 'C', count: 0, color: 'pink'},
+            ],
+            total: 0
           };
           this.countUp = this.countUp.bind(this);
         }
@@ -59,7 +62,8 @@
             }).indexOf(counter.id);
             counters[pos].count++;
             return {
-              counters: counters
+              counters: counters,
+              total: prevState.total + 1
             };
           });
         }
@@ -67,7 +71,7 @@
           return (
             <div className="container">
               <CounterList counters={this.state.counters} countUp={this.countUp}/>
-              <div>TOTAL INVENTORY: 3</div>
+              <div>TOTAL INVENTORY: {this.state.total}</div>
             </div>
           );
         }
